@@ -1,12 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faPlus,
+  faChevronLeft,
+  faTrashAlt,
+  faCheckDouble,
+} from "@fortawesome/free-solid-svg-icons";
+import { BrowserRouter } from "react-router-dom";
+import "typeface-roboto";
+import "./index.css";
+import App from "./App/App";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+library.add(faPlus, faChevronLeft, faTrashAlt, faCheckDouble);
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById("root")
+);
